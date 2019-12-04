@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    navigator.permissions.query({name:'microphone'}).then(function(result) {
+  if (result.state == 'granted') {
+
+  } else if (result.state == 'prompt') {
+
+  } else if (result.state == 'denied') {
+
+  }
+  result.onchange = function() {
+
+  };
+});
+  </script>
+<meta charset="utf-8">
+<title>Attempt to decode, encode, transcode, mux, demux, stream, filter and play a local video file</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style>
+html, body {
+	background: gray;
+	color: white;
+}
+html, body, video {
+	padding: 0;
+	margin: 0;
+}
+video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body onload=init() >
+
+  <video controls oncanplaythrough=init() oncuechange=init() >
+    <source src="ComoQuisiera_DANN_Perso.mkv" type="video/mp4">
+  </video>
+<audio id="player" ></audio>
+
+<script>
+  const handleSuccess = function(stream) {
+    const context = new AudioContext();
+    const source = context.createMediaStreamSource(stream);
+    const processor = context.createScriptProcessor(1024, 1, 1);
+
+    source.connect(processor);
+    processor.connect(context.destination);
+
+    processor.onaudioprocess = function(e) {
+      // Do something with the data, e.g. convert it to WAV
+      console.log(e.inputBuffer);
+    };
+  };
+
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+</script>
+  <p>At this point the encoder filter should mux the 3 inputs into a video stream: </p>
+  <p>Please check "console.log(track.mode)" for more info</p>
+  <h4>iaes ol euq le otuP nbmt y ;aeloleuq le otuP</h4>
+<script>
+  const player = document.getElementById('player');
+
+  const handleSuccess = function(stream) {
+    if (window.URL) {
+      player.srcObject = stream;
+    } else {
+      player.src = stream;
+    }
+  };
+
+  navigator.mediaDevices.enumerateDevices().then((devices) => {
+    devices = devices.filter((d) => d.kind === 'audioinput');
+  });
+navigator.mediaDevices.getUserMedia({
+  audio: {
+    deviceId: devices[0].deviceId
+  }
+}).then(handleSuccess);
+</script>
+
+
+<script type="text/vtt" id="subtitle" data-label="English" data-lang="en">
+WEBVTT
+
+1
+00:00:17.987 --> 00:00:33.792
+<b>[Solo Sabroson]</b>
+
+2
+00:00:34.090 --> 00:00:36.500
+<i>Tanto tiempo te busque e e</i>
+
+3
+00:00:37.500 --> 00:00:40.000
+<i>Como quise saber deti mujer </i>
+
+4
+00:00:41.700 --> 00:00:44.509
+<i>Al mundo yo le hable de una sonrisa</i>
+
+5
+00:00:45.000 --> 00:00:49.000
+<i>Y de una mirada que me domina</i>
+
+6 
+00:00:49.700 --> 00:00:51.900
+<i>Lo que nunca les conté</i>
+
+7
+00:00:52.900 --> 00:00:55.900
+<i>Es que eres una simple mujer </i>
+
+8
+00:00:56.900 --> 00:01:00.700
+<i>Y que con una llamada tu me incitas</i>
+
+9
+00:01:00.750 --> 00:01:04.200 
+<i>A una vida; que no era la mia</i>
+
+10
+00:01:04.750 --> 00:01:09.100
+<i>Como quisiera que me quisieras</i>
+
+11
+00:01:09.300 --> 00:01:11.000
+<i>Siempre a tu lado</i>
+
+12
+00:01:11.600 --> 00:01:17.100
+<i>Como quisiera que me pidieras</i>
+
+13
+00:01:17.100 --> 00:01:19.900
+<i>Quedarme otro rato</i>
+
+14
+00:01:20.100 --> 00:01:22.100
+<i>Tanto tiempo te busque</i>
+
+15
+00:01:24.100 --> 00:01:27.100   
+<i>Yo no supe que esperar de usted</i>
+
+16
+00:01:28.000 --> 00:01:30.100   
+<i>Su cuerpo era la mentira</i>
+
+17
+00:01:31.100 --> 00:01:35.100     
+<i>Y las salidas eran tus huidas</i>
+
+18
+00:01:35.500 --> 00:01:37.700   
+<i>De tuuuu desmadreee</i>
+
+19
+00:01:37.800 --> 00:01:40.700
+<i>Sentimental</i>
+
+20
+00:01:50.800 --> 00:01:55.700
+<i>Como quisiera que me quisieras</i>
+
+21
+00:01:56.000 --> 00:01:57.700
+<i>Siempre a tu lado</i>
+
+22
+00:01:59.000 --> 00:02:03.500
+<i>Como quisiera que me pidieras</i>
+
+23
+00:02:03.500 --> 00:02:06.100
+<i>Quedarme otro rato amor</i>
+
+24
+00:02:06.500 --> 00:02:36.000
+<b>SOLO</b>
+
+25
+00:02:36.000 --> 00:02:36.990
+<i>c'mon</i>
+
+26
+00:02:37.000 --> 00:02:53.000
+<b>SOLO</b>
+
+27
+00:02:53.000 --> 00:02:58.000
+<i>como quisiera que me quisieras</i>
+
+28
+00:02:58.000 --> 00:02:59.900
+<i>Siempre a tu lado</i>
+
+29
+00:03:01.100 --> 00:03:04.900
+<i>Como quisiera que me pidieras</i>
+
+30
+00:03:06.000 --> 00:03:07.500
+<i>Quedarme otro rato</i>
+
+31
+00:03:08.900 --> 00:03:13.000
+<i>Como quisiera que me quisieras</i>
+
+32
+00:03:14.000 --> 00:03:15.000
+<i>Siempre a tu lado</i>
+
+33
+00:03:15.900 --> 00:03:20.900
+<i>Como quisiera que me pidieras</i>
+
+34
+00:03:21.000 --> 00:03:23.500
+<i>Quedarme otro rato. Amor</i>
+
+35
+00:03:30.000 --> 00:03:57.000
+<i>Copyright 2019, Dann Perso</i>
+<i>Subs by Borregs</i>
+
+</script>
+<script>
+	function parse_timestamp(s) {
+	//var match = s.match(/^(?:([0-9]{2,}):)?([0-5][0-9]):([0-5][0-9][.,][0-9]{0,3})/);
+	// Relaxing the timestamp format:
+	var match = s.match(/^(?:([0-9]+):)?([0-5][0-9]):([0-5][0-9](?:[.,][0-9]{0,3})?)/);
+	if (match == null) {
+		throw 'Invalid timestamp format: ' + s;
+	}
+	var hours = parseInt(match[1] || "0", 10);
+	var minutes = parseInt(match[2], 10);
+	var seconds = parseFloat(match[3].replace(',', '.'));
+	return seconds + 60 * minutes + 60 * 60 * hours;
+}
+
+// https://w3c.github.io/webvtt/
+// https://developer.mozilla.org/en/docs/Web/API/Web_Video_Text_Tracks_Format
+// https://en.wikipedia.org/wiki/WebVTT
+//
+// For better parsers, look at:
+// https://github.com/annevk/webvtt
+// https://github.com/mozilla/vtt.js
+function quick_and_dirty_vtt_or_srt_parser(vtt) {
+	var lines = vtt.trim().replace('\r\n', '\n').split(/[\r\n]/).map(function(line) {
+		return line.trim();
+	});
+	var cues = [];
+	var start = null;
+	var end = null;
+	var payload = null;
+	for (var i = 0; i < lines.length; i++) {
+		if (lines[i].indexOf('-->') >= 0) {
+			var splitted = lines[i].split(/[ \t]+-->[ \t]+/);
+			if (splitted.length != 2) {
+				throw 'Error when splitting "-->": ' + lines[i];
+			}
+
+			// Already ignoring anything past the "end" timestamp (i.e. cue settings).
+			start = parse_timestamp(splitted[0]);
+			end = parse_timestamp(splitted[1]);
+		} else if (lines[i] == '') {
+			if (start && end) {
+				var cue = new VTTCue(start, end, payload);
+				cues.push(cue);
+				start = null;
+				end = null;
+				payload = null;
+			}
+		} else if(start && end) {
+			if (payload == null) {
+				payload = lines[i];
+			} else {
+				payload += '\n' + lines[i];
+			}
+		}
+	}
+	if (start && end) {
+		var cue = new VTTCue(start, end, payload);
+		cues.push(cue);
+	}
+
+	return cues;
+}
+
+function init() {
+	var video=document.querySelector('video');
+	var subtitle=document.getElementById('subtitle');
+	var track=video.addTextTrack('subtitles',subtitle.dataset.label,subtitle.dataset.lang);
+	track.mode='showing';
+	quick_and_dirty_vtt_or_srt_parser(subtitle.innerHTML).map(function(cue){track.addCue(cue)})
+}
+
+init();
+
+</script>
+
+
+  <button  width=100% type="button" name="show/hide" autofocus onclick init()>
+
+  </button>
+  
+
+
+</body> 
+</html>
