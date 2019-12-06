@@ -16,7 +16,7 @@
 });
   </script>
 <meta charset="utf-8">
-<title>Attempt to decode, encode, transcode, mux, demux, stream, filter and play a local video file</title>
+<title>Attempt to decode, transcode and mux a multi channel stream, filters thru JS and plays a rt output.mkv</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
 html, body {
@@ -38,7 +38,7 @@ video {
 }
 </style>
 </head>
-<body onload=init() >
+<body>
 
   <video controls oncanplaythrough=init() oncuechange=init() >
     <source src="ComoQuisiera_DANN_Perso.mkv" type="video/mp4">
@@ -309,7 +309,7 @@ init();
 </script>
 
 
-  <button  width=100% type="button" name="show/hide" autofocus onclick init()>
+  <button  width=100% type="button" name="show/hide" autofocus >
 
   </button>
   
